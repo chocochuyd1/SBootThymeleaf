@@ -1,0 +1,83 @@
+package com.softtek.robotics;
+
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.softtek.robotics.entity.Products;
+import com.softtek.robotics.service.ProductService;
+
+@SpringBootApplication
+public class RoboticsApplication implements CommandLineRunner{
+	
+	@Autowired
+	ProductService productService;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(RoboticsApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		Random rand = new Random();
+		
+		int randi = rand.nextInt(20);
+		float randf = 1 + rand.nextFloat() * (100 - 1);
+//		float randf = rand.nextFloat();
+		
+		Products Robot1 = new Products();
+		Robot1.setProductName("Land Robot");
+		Robot1.setDescription("Robot that travels in land");
+		Robot1.setPrice(randf);
+		Robot1.setStock(randi);
+		
+		Products Robot2 = new Products();
+		Robot2.setProductName("Whater Robot");
+		Robot2.setDescription("Robot that can swim");
+		Robot2.setPrice(randf);
+		Robot2.setStock(randi);
+		
+		Products Robot3 = new Products();
+		Robot3.setProductName("Sky Robot");
+		Robot3.setDescription("Robot that flys");
+		Robot3.setPrice(randf);
+		Robot3.setStock(randi);
+		
+		Products Robot4 = new Products();
+		Robot4.setProductName("Submarine Robot");
+		Robot4.setDescription("Robot that travels under whater");
+		Robot4.setPrice(randf);
+		Robot4.setStock(randi);
+		
+		Products Robot5 = new Products();
+		Robot5.setProductName("Mole Robot");
+		Robot5.setDescription("Robot that travels through land");
+		Robot5.setPrice(randf);
+		Robot5.setStock(randi);
+		
+		Products Robot6 = new Products();
+		Robot6.setProductName("Space Robot");
+		Robot6.setDescription("Robot that orbits the earth");
+		Robot6.setPrice(randf);
+		Robot6.setStock(randi);
+		
+		Products Robot7 = new Products();
+		Robot7.setProductName("Time Robot (Terminator)");
+		Robot7.setDescription("Robot that travels through time");
+		Robot7.setPrice(randf);
+		Robot7.setStock(randi);
+		
+		productService.createProduct(Robot1);
+		productService.createProduct(Robot2);
+		productService.createProduct(Robot3);
+		productService.createProduct(Robot4);
+		productService.createProduct(Robot5);
+		productService.createProduct(Robot6);
+		productService.createProduct(Robot7);
+	}
+
+}

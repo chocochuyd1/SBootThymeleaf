@@ -1,0 +1,49 @@
+package com.softtek.robotics.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class WebController {
+
+	@GetMapping("/home")
+	public String goHome(Model model) {
+		return "index";
+	}
+	@GetMapping("/about")
+	public String abou(Model model) {
+		model.addAttribute("jaTitle","About");
+		return "about";
+	}
+	@GetMapping("/services")
+	public String serv(Model model) {
+		return "services";
+	}
+	@GetMapping("/products")
+	public String products(Model model) {
+		return "products";
+	}
+	@GetMapping("/blog-home")
+	public String blogHome(Model model) {
+		return "blog-home";
+	}
+	@GetMapping("/blog-single")
+	public String blogSingle(Model model) {
+		return "blog-single";
+	}
+	@GetMapping("/contact")
+	public String contact(Model model) {
+		return "contact";
+	}
+	@GetMapping("/elements")
+	public String elements(Model model) {
+		return "elements";
+	}
+	@GetMapping("/product-details")
+	public String productsDetails(Model model) {
+		return "product-details";
+	}
+	
+	
+}

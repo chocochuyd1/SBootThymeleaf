@@ -1,0 +1,27 @@
+package com.softtek.robotics.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.softtek.robotics.entity.Products;
+import com.softtek.robotics.repository.ProductRepository;
+
+@Service
+public class ProductService {
+	private ProductRepository productRepository;
+	
+	@Autowired
+	public ProductService(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	public Products createProduct(Products product) {
+		return productRepository.save(product);
+	}
+	
+	public Products getAllProducts (Products[] product[]) {
+		return Products[];
+		
+	}
+
+}

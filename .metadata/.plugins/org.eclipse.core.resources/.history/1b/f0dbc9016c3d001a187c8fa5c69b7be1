@@ -1,0 +1,5 @@
+
+spring.profiles.active=prd
+server.servlet.context-path=/ElChoco
+
+#Custom Properties
